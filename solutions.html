@@ -1,0 +1,41 @@
+---
+layout: default
+title: Solutions
+---
+
+<div class="section">
+    <div class="page-header reveal">
+        <div class="section-label">Our Platform</div>
+        <h1>AI-powered tools for<br>surgical operations</h1>
+        <p>Comprehensive solutions that optimize every stage of the perioperative journey, from scheduling to outcomes tracking.</p>
+    </div>
+
+    <div class="solutions-grid">
+        {% for solution in site.solutions %}
+        <div class="solution-card reveal">
+            {% if solution.image %}
+            <div class="solution-image">
+                <img src="{{ solution.image }}" alt="{{ solution.title }}">
+            </div>
+            {% else %}
+            <div class="solution-image">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&h=800&fit=crop" alt="{{ solution.title }}">
+            </div>
+            {% endif %}
+            <div class="solution-text">
+                <h3><a href="{{ solution.url | relative_url }}">{{ solution.title }}</a></h3>
+                <p>{{ solution.description }}</p>
+                <a href="{{ solution.url | relative_url }}" class="read-more">Learn More &rarr;</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="cta-section">
+    <div class="cta-inner reveal">
+        <h2>Interested in our platform?</h2>
+        <p>Contact us to learn how IncisionLabs can help transform your surgical operations.</p>
+        <a href="{{ '/contact' | relative_url }}" class="btn btn-primary">Get In Touch <span class="btn-arrow">&rarr;</span></a>
+    </div>
+</div>

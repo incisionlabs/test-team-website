@@ -1,0 +1,30 @@
+---
+layout: default
+title: Blog
+---
+
+<div class="section">
+    <div class="page-header reveal">
+        <div class="section-label">Blog</div>
+        <h1>Thoughts on surgical AI<br>and innovation</h1>
+        <p>Perspectives on data-driven healthcare, workflow engineering, and the future of the operating theatre.</p>
+    </div>
+
+    <div class="blog-list">
+        {% for post in site.posts %}
+        <article class="blog-post-card reveal">
+            {% if post.image %}
+            <div class="blog-post-image">
+                <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+            </div>
+            {% endif %}
+            <div class="blog-post-content">
+                <div class="blog-meta">{{ post.date | date: "%B %d, %Y" }} · {{ post.categories | join: " · " | capitalize }}</div>
+                <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+                <p>{{ post.excerpt | strip_html | truncate: 200 }}</p>
+                <a href="{{ post.url | relative_url }}" class="read-more">Read More &rarr;</a>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</div>

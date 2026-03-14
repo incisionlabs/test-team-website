@@ -1,0 +1,36 @@
+title: IncisionLabs
+description: Clinician-led surgical AI and innovation unit transforming operating theatres through intelligent design, data science, and workflow engineering.
+baseurl: ""
+url: "https://incisionlabs.netlify.app"
+
+# Collections
+collections:
+  solutions:
+    output: true
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+  team:
+    output: false
+    
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "solutions"
+    values:
+      layout: "solution"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .bundle
